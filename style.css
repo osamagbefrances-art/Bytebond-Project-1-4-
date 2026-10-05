@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  transition: background 1s ease, color 1s ease;
+}
+
+/* Time of Day Dynamic Backgrounds */
+body.morning {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  color: #2c3e50;
+}
+
+body.afternoon {
+  background: linear-gradient(135deg, #2980b9 0%, #6dd5fa 100%);
+  color: #ffffff;
+}
+
+body.evening {
+  background: linear-gradient(135deg, #2c3e50 0%, #fd746c 100%);
+  color: #ffffff;
+}
+
+body.night {
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  color: #eceff1;
+}
+
+.app-container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  padding: 32px 24px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.clock-section {
+  margin-bottom: 24px;
+}
+
+.time-display {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.date-display {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+.tab-menu {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 8px;
+}
+
+.tab-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: inherit;
+  padding: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.tab-btn.active {
+  opacity: 1;
+  border-bottom: 3px solid currentColor;
+}
+
+.tool-panel {
+  display: none;
+}
+
+.tool-panel.active {
+  display: block;
+}
+
+.timer-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.timer-inputs input {
+  width: 60px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.2);
+  color: inherit;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.timer-inputs input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.2s;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn.alt { background: rgba(255, 255, 255, 0.25); color: inherit; }
+.btn.success { background: #2e7d32; color: #fff; }
+.btn.warning { background: #f57c00; color: #fff; }
+.btn.danger { background: #c62828; color: #fff; }
+
+@media (max-width: 375px) {
+  .time-display {
+    font-size: 2rem;
+  }
+  .app-container {
+    padding: 20px 16px;
+  }
+}

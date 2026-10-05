@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Digital Clock & Timer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Live Digital Clock Section -->
+    <section class="clock-section">
+      <div id="clock-display" class="time-display">00:00:00 AM</div>
+      <div id="date-display" class="date-display">Monday, Jan 1, 2026</div>
+      <button id="format-toggle-btn" class="btn alt">Switch to 24-Hour Format</button>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <div class="tab-menu">
+      <button class="tab-btn active" data-tab="stopwatch">Stopwatch</button>
+      <button class="tab-btn" data-tab="timer">Countdown Timer</button>
+    </div>
+
+    <!-- Stopwatch Panel -->
+    <section id="stopwatch" class="tool-panel active">
+      <div id="stopwatch-display" class="time-display">00:00:00</div>
+      <div class="controls">
+        <button id="sw-start-btn" class="btn success">Start</button>
+        <button id="sw-pause-btn" class="btn warning" disabled>Pause</button>
+        <button id="sw-reset-btn" class="btn danger" disabled>Reset</button>
+      </div>
+    </section>
+
+    <!-- Countdown Timer Panel -->
+    <section id="timer" class="tool-panel">
+      <div id="timer-display" class="time-display">00:00:00</div>
+      <div class="timer-inputs">
+        <input type="number" id="timer-hours" min="0" max="99" placeholder="HH">
+        <span>:</span>
+        <input type="number" id="timer-minutes" min="0" max="59" placeholder="MM">
+        <span>:</span>
+        <input type="number" id="timer-seconds" min="0" max="59" placeholder="SS">
+      </div>
+      <div class="controls">
+        <button id="tm-start-btn" class="btn success">Start</button>
+        <button id="tm-pause-btn" class="btn warning" disabled>Pause</button>
+        <button id="tm-reset-btn" class="btn danger" disabled>Reset</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
